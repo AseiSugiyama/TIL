@@ -17,13 +17,18 @@ class FriendlyChatApp extends StatelessWidget {
         // "hot reload" (press "r" in the console where you ran "flutter run",
         // or press Run > Flutter Hot Reload in IntelliJ). Notice that the
         // counter didn't reset back to zero; the application is not restarted.
-        primarySwatch: Colors.green,
+        primarySwatch: Colors.lightBlue,
       ),
-      home: new Scaffold(
-        appBar: new AppBar(
-          title: new Text("Friendly Chat"),
-        ),
-      )
+      home: new ChatScreen(),
+    );
+  }
+}
+
+class ChatScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: new AppBar(title: new Text("Friendly Chat")),
     );
   }
 }
