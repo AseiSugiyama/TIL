@@ -1,4 +1,4 @@
-package com.yourcompany.friendlychat;
+package com.example.firebasechat;
 
 import android.os.Bundle;
 
