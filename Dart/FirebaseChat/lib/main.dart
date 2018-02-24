@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'dart:async';
 
 // Google Sign-In
@@ -12,6 +13,9 @@ final googleSignIn = new GoogleSignIn();
 
 // Firebase Analytics
 final analytics = new FirebaseAnalytics();
+
+// Firebase Authentication
+final auth = FirebaseAuth.instance;
 
 final ThemeData kIOSTheme = new ThemeData(
   primarySwatch: Colors.orange,
@@ -193,6 +197,15 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
     if(user == null) {
       user = await googleSignIn.signIn();
       analytics.logLogin();
+    }
+    if (await auth.currentUser() == null) {
+      GoogleSignInAuthentication credentials =
+      await googleSignIn.currentUser.authentication;
+
+      await auth.signInWithGoogle(
+        idToken: credentials.idToken,
+        accessToken: credentials.accessToken,
+      );
     }
   }
 
