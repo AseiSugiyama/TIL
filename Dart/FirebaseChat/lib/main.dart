@@ -4,10 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'dart:async';
 
 // Google Sign-In
 final googleSignIn = new GoogleSignIn();
+
+// Firebase Analytics
+final analytics = new FirebaseAnalytics();
 
 final ThemeData kIOSTheme = new ThemeData(
   primarySwatch: Colors.orange,
@@ -19,8 +23,6 @@ final ThemeData kDefaultTheme = new ThemeData(
   primarySwatch: Colors.purple,
   accentColor: Colors.orangeAccent[400],
 );
-
-const String _name = "Your Name";
 
 void main() {
   runApp(new FriendlychatApp());
@@ -180,6 +182,7 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
       _messages.insert(0, message);
     });
     message.animationController.forward();
+    analytics.logEvent(name: 'send_message');
   }
 
   Future<Null> _ensureLoggedIn() async {
@@ -189,6 +192,7 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
     }
     if(user == null) {
       user = await googleSignIn.signIn();
+      analytics.logLogin();
     }
   }
 
