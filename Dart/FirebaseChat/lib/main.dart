@@ -3,6 +3,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'dart:async';
+
+// Google Sign-In
+final googleSignIn = new GoogleSignIn();
 
 final ThemeData kIOSTheme = new ThemeData(
   primarySwatch: Colors.orange,
@@ -52,13 +57,17 @@ class ChatMessage extends StatelessWidget {
           children: <Widget>[
             new Container(
               margin: const EdgeInsets.only(right: 16.0),
-              child: new CircleAvatar(child: new Text(_name[0])),
+              child: new CircleAvatar(
+                  backgroundImage:
+                  new NetworkImage(googleSignIn.currentUser.photoUrl)
+              ),
             ),
             new Expanded(
               child: new Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  new Text(_name, style: Theme.of(context).textTheme.subhead),
+                  new Text(googleSignIn.currentUser.displayName,
+                      style: Theme.of(context).textTheme.subhead),
                   new Container(
                     margin: const EdgeInsets.only(top: 5.0),
                     child: new Text(text),
@@ -150,11 +159,16 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
     );
   }
 
-  void _handleSubmitted(String text) {
+  Future<Null> _handleSubmitted(String text) async {
     _textController.clear();
     setState(() {
       _isComposing = false;
     });
+    await _ensureLoggedIn();
+    _sendMessage(text: text);
+  }
+
+  void _sendMessage({String text}){
     ChatMessage message = new ChatMessage(
       text: text,
       animationController: new AnimationController(
@@ -166,6 +180,16 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
       _messages.insert(0, message);
     });
     message.animationController.forward();
+  }
+
+  Future<Null> _ensureLoggedIn() async {
+    GoogleSignInAccount user = googleSignIn.currentUser;
+    if (user == null) {
+      user = await googleSignIn.signInSilently();
+    }
+    if(user == null) {
+      user = await googleSignIn.signIn();
+    }
   }
 
   @override
