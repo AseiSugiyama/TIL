@@ -1,4 +1,4 @@
-package com.example.firebasechat;
+package com.gokennya.firebasechat;
 
 import android.os.Bundle;
 
