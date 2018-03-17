@@ -54,6 +54,7 @@ class FriendlychatApp extends StatelessWidget {
 @override
 class ChatMessage extends StatelessWidget {
   ChatMessage({this.snapshot, this.animation});
+
   final DataSnapshot snapshot;
   final Animation animation;
 
@@ -68,17 +69,20 @@ class ChatMessage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             new Container(
-              margin: const EdgeInsets.only(right: 16.0),
-              child: new CircleAvatar(
-                  backgroundImage:
-                  new NetworkImage(snapshot.value['senderPhotoUrl']))
-              ),
+                margin: const EdgeInsets.only(right: 16.0),
+                child: new CircleAvatar(
+                    backgroundImage:
+                    new NetworkImage(snapshot.value['senderPhotoUrl']))
+            ),
             new Expanded(
               child: new Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   new Text(snapshot.value['senderName'],
-                      style: Theme.of(context).textTheme.subhead),
+                      style: Theme
+                          .of(context)
+                          .textTheme
+                          .subhead),
                   new Container(
                     margin: const EdgeInsets.only(top: 5.0),
                     child: snapshot.value['imageUrl'] != null ?
@@ -112,7 +116,9 @@ class ChatScreenState extends State<ChatScreen> {
     return new Scaffold(
         appBar: new AppBar(
           title: new Text("Friendlychat"),
-          elevation: Theme.of(context).platform == TargetPlatform.iOS ? 0.0 : 4.0,
+          elevation: Theme
+              .of(context)
+              .platform == TargetPlatform.iOS ? 0.0 : 4.0,
         ),
         body: new Column(children: <Widget>[
           new Flexible(
@@ -133,7 +139,9 @@ class ChatScreenState extends State<ChatScreen> {
           new Divider(height: 1.0),
           new Container(
             decoration:
-                new BoxDecoration(color: Theme.of(context).cardColor),
+            new BoxDecoration(color: Theme
+                .of(context)
+                .cardColor),
             child: _buildTextComposer(),
           ),
         ]));
@@ -141,25 +149,27 @@ class ChatScreenState extends State<ChatScreen> {
 
   Widget _buildTextComposer() {
     return new IconTheme(
-      data: new IconThemeData(color: Theme.of(context).accentColor),
+      data: new IconThemeData(color: Theme
+          .of(context)
+          .accentColor),
       child: new Container(
           margin: const EdgeInsets.symmetric(horizontal: 8.0),
           child: new Row(children: <Widget>[
             new Container(
-                margin: new EdgeInsets.symmetric(horizontal: 4.0),
-                child: new IconButton(
-                    icon: new Icon(Icons.photo_camera),
-                    onPressed: () async {
-                      await _ensureLoggedIn();
-                      File imageFile = await ImagePicker.pickImage();
-                      int random = new Random().nextInt(100000);
-                      StorageReference ref =
-                      FirebaseStorage.instance.ref().child("image_$random.jpg");
-                      StorageUploadTask uploadTask = ref.put(imageFile);
-                      Uri downloadUrl = (await uploadTask.future).downloadUrl;
-                      _sendMessage(imageUrl: downloadUrl.toString());
-                    }
-                ),
+              margin: new EdgeInsets.symmetric(horizontal: 4.0),
+              child: new IconButton(
+                  icon: new Icon(Icons.photo_camera),
+                  onPressed: () async {
+                    await _ensureLoggedIn();
+                    File imageFile = await ImagePicker.pickImage();
+                    int random = new Random().nextInt(100000);
+                    StorageReference ref =
+                    FirebaseStorage.instance.ref().child("image_$random.jpg");
+                    StorageUploadTask uploadTask = ref.put(imageFile);
+                    Uri downloadUrl = (await uploadTask.future).downloadUrl;
+                    _sendMessage(imageUrl: downloadUrl.toString());
+                  }
+              ),
             ),
             new Flexible(
               child: new TextField(
@@ -171,29 +181,33 @@ class ChatScreenState extends State<ChatScreen> {
                 },
                 onSubmitted: _handleSubmitted,
                 decoration:
-                    new InputDecoration.collapsed(hintText: "Send a message"),
+                new InputDecoration.collapsed(hintText: "Send a message"),
               ),
             ),
             new Container(
                 margin: new EdgeInsets.symmetric(horizontal: 4.0),
-                child: Theme.of(context).platform == TargetPlatform.iOS
+                child: Theme
+                    .of(context)
+                    .platform == TargetPlatform.iOS
                     ? new CupertinoButton(
-                        child: new Text("Send"),
-                        onPressed: _isComposing
-                            ? () => _handleSubmitted(_textController.text)
-                            : null,
-                      )
+                  child: new Text("Send"),
+                  onPressed: _isComposing
+                      ? () => _handleSubmitted(_textController.text)
+                      : null,
+                )
                     : new IconButton(
-                        icon: new Icon(Icons.send),
-                        onPressed: _isComposing
-                            ? () => _handleSubmitted(_textController.text)
-                            : null,
-                      )),
+                  icon: new Icon(Icons.send),
+                  onPressed: _isComposing
+                      ? () => _handleSubmitted(_textController.text)
+                      : null,
+                )),
           ]),
-          decoration: Theme.of(context).platform == TargetPlatform.iOS
+          decoration: Theme
+              .of(context)
+              .platform == TargetPlatform.iOS
               ? new BoxDecoration(
-                  border:
-                      new Border(top: new BorderSide(color: Colors.grey[200])))
+              border:
+              new Border(top: new BorderSide(color: Colors.grey[200])))
               : null),
     );
   }
@@ -207,7 +221,7 @@ class ChatScreenState extends State<ChatScreen> {
     _sendMessage(text: text);
   }
 
-  void _sendMessage({String text, String imageUrl }){
+  void _sendMessage({String text, String imageUrl }) {
     reference.push().set({
       'text': text,
       'imageUrl': imageUrl,
@@ -222,7 +236,7 @@ class ChatScreenState extends State<ChatScreen> {
     if (user == null) {
       user = await googleSignIn.signInSilently();
     }
-    if(user == null) {
+    if (user == null) {
       user = await googleSignIn.signIn();
       analytics.logLogin();
     }
