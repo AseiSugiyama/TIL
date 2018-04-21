@@ -1,0 +1,1 @@
+[ABC049C - 白昼夢 / Daydream](https://beta.atcoder.jp/contests/abs/tasks/arc065_a)
