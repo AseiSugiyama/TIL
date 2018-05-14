@@ -1,0 +1,1 @@
+* [A - Zero-Sum Ranges](https://beta.atcoder.jp/contests/agc023/tasks/agc023_a)

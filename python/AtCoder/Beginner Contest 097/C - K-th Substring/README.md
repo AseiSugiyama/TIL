@@ -1,0 +1,1 @@
+[C - K-th Substring](https://beta.atcoder.jp/contests/abc097/tasks/arc097_a)
