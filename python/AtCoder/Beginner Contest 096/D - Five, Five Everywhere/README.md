@@ -1,0 +1,1 @@
+[D - Five, Five Everywhere](https://beta.atcoder.jp/contests/abc096/tasks/abc096_d)

@@ -1,0 +1,1 @@
+[C - Half and Half](https://beta.atcoder.jp/contests/arc096/tasks/arc096_a)

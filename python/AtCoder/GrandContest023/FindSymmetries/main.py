@@ -23,11 +23,10 @@ def shiftTable(table, A, B):
 def countGoodShift(table):
     count = 0
     for a in range(N):
-        for b in range(N):
-            shifted = shiftTable(table, a, b)
-            if isGoodTable(shifted, a, b):
-                count += 1
-    return count
+        shifted = shiftTable(table, a, 0)
+        if isGoodTable(shifted, a, 0):
+            count += 1
+    return count * N
 
 
 print(countGoodShift(S))
