@@ -2,6 +2,8 @@
 <playground version='6.0' target-platform='macos'>
     <pages>
         <page name='HelloWorld'/>
-        <page name='Untitled Page 2'/>
+        <page name='MLPClassifier'/>
+        <page name='Python'/>
+        <page name='Numpy'/>
     </pages>
 </playground>

@@ -1,0 +1,137 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/asei/Documents/TIL/Android/Application/src/main/AndroidManifest.xml:17:1-42:12
+MERGED from [com.android.support:support-v13:27.0.2] /Users/asei/.gradle/caches/transforms-1/files-1.1/support-v13-27.0.2.aar/5c075f1f5f54f94ac37341dfc61c96f2/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.gms:play-services-wearable:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-wearable-11.8.0.aar/f58315ba7b276773c75df5d230a0c74a/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-base:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/0624920ceebde6cf172d7b2ea70f0f97/AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-tasks:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.8.0.aar/3d6eda0d3bfd37258305a5fbd1ef1486/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/13bc98dc3f53e542c3c14d2f6147416f/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-v4:27.0.2] /Users/asei/.gradle/caches/transforms-1/files-1.1/support-v4-27.0.2.aar/52a16285912459a57f3b963c4ae123b6/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:27.0.2] /Users/asei/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.0.2.aar/3fd062b9b52b81444bfa28aa40c3b863/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:appcompat-v7:27.0.2] /Users/asei/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/3c40f9044aeb8b4e537033116f9a0e26/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.0.2] /Users/asei/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.2.aar/a8bed077f481fa3532f944e08ea88c81/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.0.2] /Users/asei/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.2.aar/f2320df7f83101b8137de7a3db92677b/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.0.2] /Users/asei/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.2.aar/944cfb3af3c20b410d8fa59c88a06223/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.0.2] /Users/asei/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.2.aar/9e9b4ca0f4d93c7eec797b80b3b7a3ca/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.0.2] /Users/asei/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.2.aar/b1ebda496bc01b706b663ea4fd7ddf66/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.0.2] /Users/asei/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.2.aar/2f5d4c23fa8741962f00bc6d7d6698dc/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.0.2] /Users/asei/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/a41123ce7cfd2a15770be9911e423305/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.gms:play-services-wearable-license:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-wearable-license-11.8.0.aar/ecb6d91e25e006697c352be022131fdd/AndroidManifest.xml:2:1-6:12
+MERGED from [android.arch.lifecycle:runtime:1.0.3] /Users/asei/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/98c0fb5abf98ee46422932477ae983e2/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-base-license:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-base-license-11.8.0.aar/fe8cca0d340d6c8630b19d8c9963b545/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-basement-license-11.8.0.aar/4e7450a83cfd84b91f3dad912d66aa44/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-tasks-license-11.8.0.aar/1d05e1821e6f12e12d53fd2bf8271aad/AndroidManifest.xml:2:1-6:12
+	package
+		ADDED from /Users/asei/Documents/TIL/Android/Application/src/main/AndroidManifest.xml:18:11-59
+	xmlns:android
+		ADDED from /Users/asei/Documents/TIL/Android/Application/src/main/AndroidManifest.xml:17:11-69
+uses-sdk
+ADDED from /Users/asei/Documents/TIL/Android/Application/src/main/AndroidManifest.xml:20:5-21:47
+INJECTED from /Users/asei/Documents/TIL/Android/Application/src/main/AndroidManifest.xml:20:5-21:47
+INJECTED from /Users/asei/Documents/TIL/Android/Application/src/main/AndroidManifest.xml:20:5-21:47
+MERGED from [com.android.support:support-v13:27.0.2] /Users/asei/.gradle/caches/transforms-1/files-1.1/support-v13-27.0.2.aar/5c075f1f5f54f94ac37341dfc61c96f2/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v13:27.0.2] /Users/asei/.gradle/caches/transforms-1/files-1.1/support-v13-27.0.2.aar/5c075f1f5f54f94ac37341dfc61c96f2/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-wearable:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-wearable-11.8.0.aar/f58315ba7b276773c75df5d230a0c74a/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-wearable:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-wearable-11.8.0.aar/f58315ba7b276773c75df5d230a0c74a/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/0624920ceebde6cf172d7b2ea70f0f97/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/0624920ceebde6cf172d7b2ea70f0f97/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.8.0.aar/3d6eda0d3bfd37258305a5fbd1ef1486/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.8.0.aar/3d6eda0d3bfd37258305a5fbd1ef1486/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/13bc98dc3f53e542c3c14d2f6147416f/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/13bc98dc3f53e542c3c14d2f6147416f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.0.2] /Users/asei/.gradle/caches/transforms-1/files-1.1/support-v4-27.0.2.aar/52a16285912459a57f3b963c4ae123b6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.0.2] /Users/asei/.gradle/caches/transforms-1/files-1.1/support-v4-27.0.2.aar/52a16285912459a57f3b963c4ae123b6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.0.2] /Users/asei/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.0.2.aar/3fd062b9b52b81444bfa28aa40c3b863/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.0.2] /Users/asei/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.0.2.aar/3fd062b9b52b81444bfa28aa40c3b863/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.0.2] /Users/asei/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/3c40f9044aeb8b4e537033116f9a0e26/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.0.2] /Users/asei/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/3c40f9044aeb8b4e537033116f9a0e26/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.0.2] /Users/asei/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.2.aar/a8bed077f481fa3532f944e08ea88c81/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.0.2] /Users/asei/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.2.aar/a8bed077f481fa3532f944e08ea88c81/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.2] /Users/asei/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.2.aar/f2320df7f83101b8137de7a3db92677b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.2] /Users/asei/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.2.aar/f2320df7f83101b8137de7a3db92677b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.2] /Users/asei/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.2.aar/944cfb3af3c20b410d8fa59c88a06223/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.2] /Users/asei/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.2.aar/944cfb3af3c20b410d8fa59c88a06223/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.2] /Users/asei/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.2.aar/9e9b4ca0f4d93c7eec797b80b3b7a3ca/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.2] /Users/asei/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.2.aar/9e9b4ca0f4d93c7eec797b80b3b7a3ca/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.2] /Users/asei/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.2.aar/b1ebda496bc01b706b663ea4fd7ddf66/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.2] /Users/asei/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.2.aar/b1ebda496bc01b706b663ea4fd7ddf66/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.0.2] /Users/asei/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.2.aar/2f5d4c23fa8741962f00bc6d7d6698dc/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.0.2] /Users/asei/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.2.aar/2f5d4c23fa8741962f00bc6d7d6698dc/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.2] /Users/asei/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/a41123ce7cfd2a15770be9911e423305/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.2] /Users/asei/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/a41123ce7cfd2a15770be9911e423305/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-wearable-license:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-wearable-license-11.8.0.aar/ecb6d91e25e006697c352be022131fdd/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-wearable-license:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-wearable-license-11.8.0.aar/ecb6d91e25e006697c352be022131fdd/AndroidManifest.xml:4:5-43
+MERGED from [android.arch.lifecycle:runtime:1.0.3] /Users/asei/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/98c0fb5abf98ee46422932477ae983e2/AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.lifecycle:runtime:1.0.3] /Users/asei/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/98c0fb5abf98ee46422932477ae983e2/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.gms:play-services-base-license:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-base-license-11.8.0.aar/fe8cca0d340d6c8630b19d8c9963b545/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-base-license:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-base-license-11.8.0.aar/fe8cca0d340d6c8630b19d8c9963b545/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-basement-license-11.8.0.aar/4e7450a83cfd84b91f3dad912d66aa44/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-basement-license-11.8.0.aar/4e7450a83cfd84b91f3dad912d66aa44/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-tasks-license-11.8.0.aar/1d05e1821e6f12e12d53fd2bf8271aad/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-tasks-license-11.8.0.aar/1d05e1821e6f12e12d53fd2bf8271aad/AndroidManifest.xml:4:5-43
+INJECTED from /Users/asei/Documents/TIL/Android/Application/src/main/AndroidManifest.xml:20:5-21:47
+INJECTED from /Users/asei/Documents/TIL/Android/Application/src/main/AndroidManifest.xml:20:5-21:47
+	android:targetSdkVersion
+		ADDED from /Users/asei/Documents/TIL/Android/Application/src/main/AndroidManifest.xml:21:15-44
+		INJECTED from /Users/asei/Documents/TIL/Android/Application/src/main/AndroidManifest.xml
+		INJECTED from /Users/asei/Documents/TIL/Android/Application/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from /Users/asei/Documents/TIL/Android/Application/src/main/AndroidManifest.xml:20:15-41
+		INJECTED from /Users/asei/Documents/TIL/Android/Application/src/main/AndroidManifest.xml
+		INJECTED from /Users/asei/Documents/TIL/Android/Application/src/main/AndroidManifest.xml
+uses-permission#android.permission.VIBRATE
+ADDED from /Users/asei/Documents/TIL/Android/Application/src/main/AndroidManifest.xml:23:5-66
+	android:name
+		ADDED from /Users/asei/Documents/TIL/Android/Application/src/main/AndroidManifest.xml:23:22-63
+application
+ADDED from /Users/asei/Documents/TIL/Android/Application/src/main/AndroidManifest.xml:24:5-41:19
+MERGED from [com.google.android.gms:play-services-wearable:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-wearable-11.8.0.aar/f58315ba7b276773c75df5d230a0c74a/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-wearable:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-wearable-11.8.0.aar/f58315ba7b276773c75df5d230a0c74a/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-base:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/0624920ceebde6cf172d7b2ea70f0f97/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/0624920ceebde6cf172d7b2ea70f0f97/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-tasks:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.8.0.aar/3d6eda0d3bfd37258305a5fbd1ef1486/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.8.0.aar/3d6eda0d3bfd37258305a5fbd1ef1486/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/13bc98dc3f53e542c3c14d2f6147416f/AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/13bc98dc3f53e542c3c14d2f6147416f/AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-wearable-license:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-wearable-license-11.8.0.aar/ecb6d91e25e006697c352be022131fdd/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-wearable-license:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-wearable-license-11.8.0.aar/ecb6d91e25e006697c352be022131fdd/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-base-license:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-base-license-11.8.0.aar/fe8cca0d340d6c8630b19d8c9963b545/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-base-license:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-base-license-11.8.0.aar/fe8cca0d340d6c8630b19d8c9963b545/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-basement-license-11.8.0.aar/4e7450a83cfd84b91f3dad912d66aa44/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-basement-license-11.8.0.aar/4e7450a83cfd84b91f3dad912d66aa44/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-tasks-license-11.8.0.aar/1d05e1821e6f12e12d53fd2bf8271aad/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-tasks-license-11.8.0.aar/1d05e1821e6f12e12d53fd2bf8271aad/AndroidManifest.xml:5:5-20
+	android:label
+		ADDED from /Users/asei/Documents/TIL/Android/Application/src/main/AndroidManifest.xml:26:13-45
+	android:icon
+		ADDED from /Users/asei/Documents/TIL/Android/Application/src/main/AndroidManifest.xml:25:13-49
+	android:allowBackup
+		ADDED from /Users/asei/Documents/TIL/Android/Application/src/main/AndroidManifest.xml:28:13-39
+	android:theme
+		ADDED from /Users/asei/Documents/TIL/Android/Application/src/main/AndroidManifest.xml:27:13-60
+meta-data#com.google.android.gms.version
+ADDED from /Users/asei/Documents/TIL/Android/Application/src/main/AndroidManifest.xml:30:9-32:73
+MERGED from [com.google.android.gms:play-services-basement:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/13bc98dc3f53e542c3c14d2f6147416f/AndroidManifest.xml:23:9-25:69
+MERGED from [com.google.android.gms:play-services-basement:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/13bc98dc3f53e542c3c14d2f6147416f/AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from /Users/asei/Documents/TIL/Android/Application/src/main/AndroidManifest.xml:32:17-70
+	android:name
+		ADDED from /Users/asei/Documents/TIL/Android/Application/src/main/AndroidManifest.xml:31:17-62
+service#com.example.android.wearable.findphone.SoundAlarmListenerService
+ADDED from /Users/asei/Documents/TIL/Android/Application/src/main/AndroidManifest.xml:34:9-39:19
+	android:name
+		ADDED from /Users/asei/Documents/TIL/Android/Application/src/main/AndroidManifest.xml:35:13-92
+intent-filter#action:name:com.google.android.gms.wearable.BIND_LISTENER
+ADDED from /Users/asei/Documents/TIL/Android/Application/src/main/AndroidManifest.xml:36:13-38:29
+action#com.google.android.gms.wearable.BIND_LISTENER
+ADDED from /Users/asei/Documents/TIL/Android/Application/src/main/AndroidManifest.xml:37:17-88
+	android:name
+		ADDED from /Users/asei/Documents/TIL/Android/Application/src/main/AndroidManifest.xml:37:25-85
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/0624920ceebde6cf172d7b2ea70f0f97/AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/0624920ceebde6cf172d7b2ea70f0f97/AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/0624920ceebde6cf172d7b2ea70f0f97/AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:11.8.0] /Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/0624920ceebde6cf172d7b2ea70f0f97/AndroidManifest.xml:24:13-79

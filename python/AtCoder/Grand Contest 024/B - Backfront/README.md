@@ -1,0 +1,1 @@
+[B - Backfront](https://beta.atcoder.jp/contests/agc024/tasks/agc024_b)
