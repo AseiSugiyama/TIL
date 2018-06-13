@@ -4,26 +4,7 @@
             "outputFile": "/Users/asei/Documents/TIL/Android/Wearable/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v21/values-v21.xml",
             "map": [
                 {
-                    "source": "/Users/asei/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/a41123ce7cfd2a15770be9911e423305/res/values-v21/values-v21.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,13",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,159,223,290,354,470,596,722,850,1022",
-                        "endLines": "2,3,4,5,6,7,8,9,12,17",
-                        "endColumns": "103,63,66,63,115,125,125,127,12,12",
-                        "endOffsets": "154,218,285,349,465,591,717,845,1017,1355"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,14,18,56,59",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,159,223,290,354,470,927,1221,3235,3407",
-                        "endLines": "2,3,4,5,6,7,14,18,58,63",
-                        "endColumns": "103,63,66,63,115,125,125,127,12,12",
-                        "endOffsets": "154,218,285,349,465,591,1048,1344,3402,3740"
-                    }
-                },
-                {
-                    "source": "/Users/asei/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.2.aar/2f5d4c23fa8741962f00bc6d7d6698dc/res/values-v21/values-v21.xml",
+                    "source": "/Users/asei/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.2.aar/06954332aa6d8dfca516b0398e8e8eb4/res/values-v21/values-v21.xml",
                     "from": {
                         "startLines": "2,5,8,11",
                         "startColumns": "4,4,4,4",
@@ -42,7 +23,26 @@
                     }
                 },
                 {
-                    "source": "/Users/asei/.gradle/caches/transforms-1/files-1.1/wearable-2.2.0.aar/6c41a750551b1f68e4c84741788e7c81/res/values-v21/values.xml",
+                    "source": "/Users/asei/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/0a3e5199f986143c6677b7477c9322d4/res/values-v21/values-v21.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,13",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,159,223,290,354,470,596,722,850,1022",
+                        "endLines": "2,3,4,5,6,7,8,9,12,17",
+                        "endColumns": "103,63,66,63,115,125,125,127,12,12",
+                        "endOffsets": "154,218,285,349,465,591,717,845,1017,1355"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,14,18,56,59",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,159,223,290,354,470,927,1221,3235,3407",
+                        "endLines": "2,3,4,5,6,7,14,18,58,63",
+                        "endColumns": "103,63,66,63,115,125,125,127,12,12",
+                        "endOffsets": "154,218,285,349,465,591,1048,1344,3402,3740"
+                    }
+                },
+                {
+                    "source": "/Users/asei/.gradle/caches/transforms-1/files-1.1/wearable-2.2.0.aar/e3a27f2b642751b69dcab9a74c0d9227/res/values-v21/values.xml",
                     "from": {
                         "startLines": "4,8,11,15,21,30,42,54,57,61",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0",

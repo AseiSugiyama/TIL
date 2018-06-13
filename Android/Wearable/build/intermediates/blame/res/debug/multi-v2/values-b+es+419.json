@@ -4,7 +4,7 @@
             "outputFile": "/Users/asei/Documents/TIL/Android/Wearable/build/intermediates/incremental/mergeDebugResources/merged.dir/values-b+es+419/values-b+es+419.xml",
             "map": [
                 {
-                    "source": "/Users/asei/.gradle/caches/transforms-1/files-1.1/wearable-2.2.0.aar/6c41a750551b1f68e4c84741788e7c81/res/values-b+es+419/values.xml",
+                    "source": "/Users/asei/.gradle/caches/transforms-1/files-1.1/wearable-2.2.0.aar/e3a27f2b642751b69dcab9a74c0d9227/res/values-b+es+419/values.xml",
                     "from": {
                         "startLines": "4,7,10,13,16,19,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",

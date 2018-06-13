@@ -4,24 +4,7 @@
             "outputFile": "/Users/asei/Documents/TIL/Android/Wearable/build/intermediates/incremental/mergeDebugResources/merged.dir/values-uz/values-uz.xml",
             "map": [
                 {
-                    "source": "/Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/13bc98dc3f53e542c3c14d2f6147416f/res/values-uz/values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "283",
-                        "endColumns": "208",
-                        "endOffsets": "491"
-                    },
-                    "to": {
-                        "startLines": "10",
-                        "startColumns": "4",
-                        "startOffsets": "1260",
-                        "endColumns": "208",
-                        "endOffsets": "1464"
-                    }
-                },
-                {
-                    "source": "/Users/asei/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/a41123ce7cfd2a15770be9911e423305/res/values-uz/values-uz.xml",
+                    "source": "/Users/asei/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/0a3e5199f986143c6677b7477c9322d4/res/values-uz/values-uz.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -38,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/0624920ceebde6cf172d7b2ea70f0f97/res/values-uz/values.xml",
+                    "source": "/Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/a24d146ffbaf1d250c469f7f5838a8d8/res/values-uz/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -52,6 +35,23 @@
                         "startOffsets": "105,212,394,525,636,840,975,1125,1469,1700,1810,2000,2134,2347,2539,2635,2726",
                         "endColumns": "106,181,130,110,203,134,149,134,230,109,189,133,212,191,95,90,108",
                         "endOffsets": "207,389,520,631,835,970,1120,1255,1695,1805,1995,2129,2342,2534,2630,2721,2830"
+                    }
+                },
+                {
+                    "source": "/Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/7bdc09d0ef42cbd5b4d5be5f25e9d588/res/values-uz/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "283",
+                        "endColumns": "208",
+                        "endOffsets": "491"
+                    },
+                    "to": {
+                        "startLines": "10",
+                        "startColumns": "4",
+                        "startOffsets": "1260",
+                        "endColumns": "208",
+                        "endOffsets": "1464"
                     }
                 }
             ]

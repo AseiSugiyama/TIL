@@ -4,7 +4,7 @@
             "outputFile": "/Users/asei/Documents/TIL/Android/Application/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ky/values-ky.xml",
             "map": [
                 {
-                    "source": "/Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/0624920ceebde6cf172d7b2ea70f0f97/res/values-ky/values.xml",
+                    "source": "/Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/a24d146ffbaf1d250c469f7f5838a8d8/res/values-ky/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -21,24 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/asei/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/a41123ce7cfd2a15770be9911e423305/res/values-ky/values-ky.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "38",
-                        "startColumns": "4",
-                        "startOffsets": "4643",
-                        "endColumns": "100",
-                        "endOffsets": "4739"
-                    }
-                },
-                {
-                    "source": "/Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/13bc98dc3f53e542c3c14d2f6147416f/res/values-ky/values.xml",
+                    "source": "/Users/asei/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/7bdc09d0ef42cbd5b4d5be5f25e9d588/res/values-ky/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -55,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "/Users/asei/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/3c40f9044aeb8b4e537033116f9a0e26/res/values-ky/values-ky.xml",
+                    "source": "/Users/asei/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/47c400c0e510b536e89f6248ad8edcc8/res/values-ky/values-ky.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -69,6 +52,23 @@
                         "startOffsets": "105,209,304,423,507,614,731,809,888,969,1079,1186,1284,1390,1497,1598,1759,4562",
                         "endColumns": "103,94,118,83,106,116,77,78,80,109,106,97,105,106,100,160,102,80",
                         "endOffsets": "204,299,418,502,609,726,804,883,964,1074,1181,1279,1385,1492,1593,1754,1857,4638"
+                    }
+                },
+                {
+                    "source": "/Users/asei/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/0a3e5199f986143c6677b7477c9322d4/res/values-ky/values-ky.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "38",
+                        "startColumns": "4",
+                        "startOffsets": "4643",
+                        "endColumns": "100",
+                        "endOffsets": "4739"
                     }
                 }
             ]

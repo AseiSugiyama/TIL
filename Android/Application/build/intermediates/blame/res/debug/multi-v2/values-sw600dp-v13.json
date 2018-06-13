@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/asei/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/3c40f9044aeb8b4e537033116f9a0e26/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "source": "/Users/asei/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/47c400c0e510b536e89f6248ad8edcc8/res/values-sw600dp-v13/values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
