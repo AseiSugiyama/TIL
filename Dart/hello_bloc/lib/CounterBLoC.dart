@@ -5,7 +5,7 @@ class CounterBloc{
   StreamController counterAdditionController = StreamController();
   Sink get counterAddition => counterAdditionController.sink;
   BehaviorSubject<int> _count = BehaviorSubject<int>(seedValue: 0);
-  Stream<int> get countString => _count.stream;
+  Stream<int> get count => _count.stream;
 
   CounterBloc(){
     counterAdditionController.stream.listen( (addition) {

@@ -38,7 +38,7 @@ class MyHomePage extends StatelessWidget {
             ),
             // データストリームから現在のカウントを取得
             StreamBuilder<int>(
-              stream: counterBloc.countString,
+              stream: counterBloc.count,
               builder: (context, snapshot) =>
                   Text(
                     snapshot.data.toString(),
