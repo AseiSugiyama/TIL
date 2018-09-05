@@ -1,9 +1,7 @@
-import 'dart:async';
-
 import 'pubsub.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(new MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -25,51 +23,60 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  _MyHomePageState createState() => new _MyHomePageState();
+  _MyHomePageState createState() {
+    return _MyHomePageState();
+  }
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
   final publisher = CloudPublisher();
 
-  void _incrementCounter() async {
-    setState(() {
-      _counter++;
+  _MyHomePageState({Key key}) : super() {
+    publisher.countString.listen((count) async {
+      if (Theme.of(context).platform == TargetPlatform.iOS) {
+        var message = "From Flutter app on iOS: counter = " + count.toString();
+        await publisher.publish(message);
+      } else {
+        var message =
+            "From Flutter app on Android: counter = " + count.toString();
+        await publisher.publish(message);
+      }
     });
-    String message;
-    if (Theme.of(context).platform == TargetPlatform.iOS) {
-      message = "From Flutter app on iOS: counter = " + _counter.toString();
-      await publisher.publish(message);
-    }else{
-      message = "From Flutter app on Android: counter = " + _counter.toString();
-      await publisher.publish(message);
-    }
+  }
+
+  void _incrementCounter() async {
+    publisher.counterAddition.add(null);
   }
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text(widget.title),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
       ),
-      body: new Center(
-        child: new Column(
+      body: Center(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            new Text(
+            Text(
               'You have pushed the button this many times:',
             ),
-            new Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
+            StreamBuilder<int>(
+              stream: publisher.countString,
+              builder: (context, snapshot) {
+                return Text(
+                  snapshot.data.toString(),
+                  style: Theme.of(context).textTheme.display1,
+                );
+              },
             ),
           ],
         ),
       ),
-      floatingActionButton: new FloatingActionButton(
+      floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
-        child: new Icon(Icons.add),
+        child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }

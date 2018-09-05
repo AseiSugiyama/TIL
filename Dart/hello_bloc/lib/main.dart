@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'CounterBLoC.dart';
+import 'LogBLoC.dart';
 
 void main() => runApp(new MyApp());
 
@@ -19,9 +20,12 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatelessWidget {
   String title;
-
-  MyHomePage({this.title});
   CounterBloc counterBloc = CounterBloc();
+  var logBloc = LogBloc();
+
+  MyHomePage({this.title}){
+    logBloc.subscribe(stream: counterBloc.count);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,14 +37,13 @@ class MyHomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-           Text(
+            Text(
               'You have pushed the button this many times:',
             ),
             // データストリームから現在のカウントを取得
             StreamBuilder<int>(
               stream: counterBloc.count,
-              builder: (context, snapshot) =>
-                  Text(
+              builder: (context, snapshot) => Text(
                     snapshot.data.toString(),
                     style: Theme.of(context).textTheme.display1,
                   ),
@@ -49,7 +52,7 @@ class MyHomePage extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-         // ボタンが押された時Streamに通知
+        // ボタンが押された時Streamに通知
         onPressed: () => counterBloc.counterAddition.add(null),
         tooltip: 'Increment',
         child: Icon(Icons.add),
