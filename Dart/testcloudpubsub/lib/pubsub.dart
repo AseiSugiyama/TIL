@@ -9,22 +9,24 @@ class CloudPublisher {
   final _credentials = auth.ServiceAccountCredentials.fromJson(credential);
   String prefix;
 
-  final _counterAdditionController = StreamController();
+  final _counterAdditionController = StreamController<int>();
   Sink get counterAddition => _counterAdditionController.sink;
   BehaviorSubject<int> _count = BehaviorSubject<int>(seedValue: 0);
-  Stream<int> get countString => _count.stream;
+  Stream<int> get count => _count.stream;
+  Topic _topic;
 
   CloudPublisher() {
-    _counterAdditionController.stream.listen((addition) {
-      _count.add(_count.value + 1);
+    _counterAdditionController.stream.listen((value) {
+      _count.add(_count.value + value);
+    });
+    auth.clientViaServiceAccount(_credentials, _scopes).then((client) async {
+      const project = 'testcloudpubsub-212303';
+      var pubsub = PubSub(client, project);
+      _topic = await pubsub.lookupTopic('test-topic');
     });
   }
 
   Future publish(String message) async {
-    var client = await auth.clientViaServiceAccount(_credentials, _scopes);
-    const project = 'testcloudpubsub-212303';
-    var pubsub = PubSub(client, project);
-    var topic = await pubsub.lookupTopic('test-topic');
-    await topic.publishString(message);
+    await _topic.publishString(message);
   }
 }

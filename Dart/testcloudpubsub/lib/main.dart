@@ -32,7 +32,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final publisher = CloudPublisher();
 
   _MyHomePageState({Key key}) : super() {
-    publisher.countString.listen((count) async {
+    publisher.count.listen((count) async {
       if (Theme.of(context).platform == TargetPlatform.iOS) {
         var message = "From Flutter app on iOS: counter = " + count.toString();
         await publisher.publish(message);
@@ -45,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _incrementCounter() async {
-    publisher.counterAddition.add(null);
+    publisher.counterAddition.add(1);
   }
 
   @override
@@ -62,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
               'You have pushed the button this many times:',
             ),
             StreamBuilder<int>(
-              stream: publisher.countString,
+              stream: publisher.count,
               builder: (context, snapshot) {
                 return Text(
                   snapshot.data.toString(),
