@@ -1,109 +1,234 @@
 import 'package:flutter/material.dart';
+import 'package:fluttie/fluttie.dart';
 
 void main() => runApp(new MyApp());
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+/// An example app showcasing the features of fluttie animations. It should
+/// show a emoji animation at the top and a bar of stars below it. When tapping
+/// on a star, all the stars to the left should be filled in a beautiful animation.
+class MyApp extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return new MaterialApp(
-      title: 'Flutter Demo',
-      theme: new ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or press Run > Flutter Hot Reload in IntelliJ). Notice that the
-        // counter didn't reset back to zero; the application is not restarted.
-        primarySwatch: Colors.blue,
-      ),
-      home: new MyHomePage(title: 'Flutter Demo Home Page'),
-    );
+  _MyAppState createState() => new _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  /// Animation to display a shocked emoji taken from lottiefiles.com
+  FluttieAnimationController shockedEmoji;
+
+  /// A list of animations representing the stars shown in a horizontal line.
+  /// They will be started when the user tabs on one of them.
+  List<FluttieAnimationController> starAnimations = [];
+
+  List<FluttieAnimationController> heartAnimations = [];
+
+  /// The amount of stars currently selected in the line. Used to compute the
+  /// difference on a tap.
+  int currentlySelectedStars = 0;
+
+  /// If we're ready to show the animations. Set to true after they have been
+  /// loaded by the plugin.
+  bool ready = false;
+
+  /// The performance overlay can be triggered by tapping on the icon on the
+  /// right-hand side of the toolbar. It can be used to invastigate the
+  /// performance impact of running different animations.
+  bool showPerformanceOverlay = false;
+
+  @override
+  initState() {
+    super.initState();
+
+    /// Load and prepare our animations after this widget has been added
+    prepareAnimation();
   }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
 
   @override
-  _MyHomePageState createState() => new _MyHomePageState();
-}
+  dispose() {
+    super.dispose();
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+    /// When this widget gets removed (in this app, that won't happen, but it
+    /// can happen for widgets using animations in other situations), we should
+    /// free the resources used by our animations.
+    shockedEmoji?.dispose();
+    starAnimations.forEach((anim) => anim.dispose());
+  }
 
-  void _incrementCounter() {
+  // async because the plugin will have to do some background-work
+  prepareAnimation() async {
+    // Checks if the platform we're running on is supported by the animation plugin
+    bool canBeUsed = await Fluttie.isAvailable();
+    if (!canBeUsed) {
+      print("Animations are not supported on this platform");
+      return;
+    }
+
+    var instance = new Fluttie();
+
+    // Load our first composition for the emoji animation
+    var emojiComposition = await instance
+        .loadAnimationFromAsset("assets/animations/emoji_shock.json");
+    // And prepare its animation, which should loop infinitely and take 2s per
+    // iteration. Instead of RepeatMode.START_OVER, we could have choosen
+    // REVERSE, which would play the animation in reverse on every second iteration.
+    shockedEmoji = await instance.prepareAnimation(emojiComposition,
+        duration: const Duration(seconds: 2),
+        repeatCount: const RepeatCount.infinite(),
+        repeatMode: RepeatMode.START_OVER);
+
+    // Load the composition for our star animation. Notice how we only have to
+    // load the composition once, even though we're using it for 5 animations!
+    var composition =
+        await instance.loadAnimationFromAsset("assets/animations/star.json");
+
+    // Create the star animation with the default setting. 5 times. The
+    // preferredSize needs to be set because the original star animation is quite
+    // small. See the documentation for the method prepareAnimation for details.
+    for (int i = 0; i < 5; i++) {
+      starAnimations.add(await instance.prepareAnimation(composition,
+          preferredSize: Fluttie.kDefaultSize));
+    }
+
+    var heartComposition =
+        await instance.loadAnimationFromAsset("assets/animations/heart.json");
+    for (int i = 0; i < 5; i++) {
+      heartAnimations.add(await instance.prepareAnimation(heartComposition,
+          preferredSize: Fluttie.kDefaultSize));
+    }
+
+    // Loading animations may take quite some time. We should check that the
+    // widget is still used before updating it, it might have been removed while
+    // we were loading our animations!
+    if (mounted) {
+      setState(() {
+        ready = true; // The animations have been loaded, we're ready
+        shockedEmoji.start(); //start our looped emoji animation
+        heartAnimations.forEach((composition) {
+          composition.start();
+        });
+      });
+    }
+  }
+
+  void animateStarChange(int updated) {
+    /* When the amount of stars that are selected changes, we will have to
+       play or stop animations in order to reflect that in the UI. For that, we
+       start the animation for each star that was not previously selected but
+       should be selected now (i >= old) and (i < currentlySelectedStars).
+       If the amount to show has been reduced, we can simply rewind the animation
+       to the beginning, as that will show a hollow star not selected.
+
+       Notice how i refers to the index starting at 0, while the amount should
+       start at 1.
+    */
+
     setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
+      int old = this.currentlySelectedStars;
+      currentlySelectedStars = updated;
+
+      for (int i = 0; i < 5; i++) {
+        if (i < currentlySelectedStars) {
+          //Star needs to be shown
+          if (i >= old) //Star would otherwise already be shown
+            starAnimations[i].start();
+        } else {
+          //Remove star, reset to beginning
+          starAnimations[i].stopAndReset(rewind: true);
+        }
+      }
+
+      heartAnimations.forEach((heart) {
+        heart.start();
+      });
     });
   }
 
-  @override
-  Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-    return new Scaffold(
-      appBar: new AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: new Text(widget.title),
-      ),
-      body: new Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: new Column(
-          // Column is also layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug paint" (press "p" in the console where you ran
-          // "flutter run", or select "Toggle Debug Paint" from the Flutter tool
-          // window in IntelliJ) to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            new Text(
-              'You have pushed the button this many times:',
-            ),
-            new Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
-            ),
+  /// Builds a widget animating the star at the specified index.
+  Widget buildStar(int i) {
+    return new Flexible(
+        child: new GestureDetector(
+            onTap: () {
+              // Update the amount of stars that have been selected when this star
+              // is tapped.
+              int amountOfStars = i + 1;
+              animateStarChange(amountOfStars);
+            },
+            child: new FluttieAnimation(starAnimations[i])));
+  }
+
+  /// When we're ready to show the animations, this method will create the main
+  /// content showcasing them.
+  Widget buildStarContent(BuildContext context) {
+    return new Column(
+      children: [
+        //Display the emoji animations at the top
+        new FluttieAnimation(shockedEmoji),
+        //followed by a row of 5 stars that can be tapped
+        new Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            buildStar(0),
+            buildStar(1),
+            buildStar(2),
+            buildStar(3),
+            buildStar(4)
           ],
         ),
-      ),
-      floatingActionButton: new FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: new Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+        Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: heartAnimations.map((heart) {
+            return Flexible(
+              child: FluttieAnimation(heart),
+            );
+          }).toList(),
+        ),
+        // Use a Flexible widget so that the rest will be on the bottom
+        new Flexible(child: new Container()),
+        // And display some credits showing where the animations are taken from
+        new RichText(
+          text: new TextSpan(children: [
+            new TextSpan(
+                text: "Animations taken from ",
+                style: Theme.of(context)
+                    .textTheme
+                    .body1
+                    .copyWith(color: Colors.grey)),
+            new TextSpan(
+                text: "lottiefiles.com",
+                style: Theme.of(context).textTheme.body2)
+          ]),
+        ),
+        new Padding(padding: const EdgeInsets.only(bottom: 10.0)),
+      ],
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // Display the main content, or - when we're not ready for that yet - a text
+    // informing the user that the animations are being prepared.
+    Widget content =
+        ready ? buildStarContent(context) : new Text("Loading animations");
+
+    return new MaterialApp(
+      showPerformanceOverlay: this.showPerformanceOverlay,
+      home: new Scaffold(
+          appBar: new AppBar(
+            title: new Text('Fluttie example'),
+            actions: [
+              // Button to toggle the performance overlay
+              new IconButton(
+                icon: const Icon(Icons.build),
+                onPressed: () {
+                  setState(() {
+                    showPerformanceOverlay = !showPerformanceOverlay;
+                  });
+                },
+              )
+            ],
+          ),
+          body: new Center(child: content)),
     );
   }
 }
