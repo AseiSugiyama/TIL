@@ -47,24 +47,26 @@ class Category extends StatelessWidget {
 
   /// Navigates to the [ConverterRoute].
   void _navigateToConverter(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute<Null>(builder: (context) {
-      return Scaffold(
-        appBar: AppBar(
-          elevation: 1.0,
-          title: Text(
-            name,
-            style: Theme.of(context).textTheme.display1,
+    Navigator.of(context).push(MaterialPageRoute<Null>(
+      builder: (BuildContext context) {
+        return Scaffold(
+          appBar: AppBar(
+            elevation: 1.0,
+            title: Text(
+              name,
+              style: Theme.of(context).textTheme.display1,
+            ),
+            centerTitle: true,
+            backgroundColor: color,
           ),
-          centerTitle: true,
-          backgroundColor: color,
-        ),
-        body: ConverterRoute(
-          color: color,
-          name: name,
-          units: units,
-        ),
-      );
-    }));
+          body: ConverterRoute(
+            color: color,
+            name: name,
+            units: units,
+          ),
+        );
+      },
+    ));
   }
 
   /// Builds a custom widget that shows [Category] information.

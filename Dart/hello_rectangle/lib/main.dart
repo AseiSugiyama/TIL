@@ -10,7 +10,6 @@ import 'package:flutter/material.dart';
 // More details at http://dart-lang.github.io/linter/lints/avoid_relative_lib_imports.html
 import 'package:hello_rectangle/category_route.dart';
 
-
 /// The function that is called when main.dart is run.
 void main() {
   runApp(UnitConverterApp());
