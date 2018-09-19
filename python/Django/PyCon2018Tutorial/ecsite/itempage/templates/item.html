@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>{{ item.item_name }}</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>商品コード:</th>
+            <td>{{item.item_code}}</td>
+        </tr>
+        <tr>
+            <th>商品名:</th>
+            <td>{{item.item_name}}</td>
+        </tr>
+        <tr>
+            <th>価格:</th>
+            <td>{{item.price}}</td>
+        </tr>
+    </table>
+    <form action="{% url 'add_to_cart' %}" method="post">
+        {% csrf_token %}
+        {{ form.item_id.as_hidden }}
+        数量: {{ form.buy_num }}
+        <input type="submit" value="ショッピングカートに入れる">
+    </form>
+</body>
+</html>
