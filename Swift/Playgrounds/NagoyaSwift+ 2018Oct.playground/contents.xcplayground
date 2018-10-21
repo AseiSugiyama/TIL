@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' executeOnSourceChanges='false'>
+    <pages>
+        <page name='Protocol'/>
+        <page name='Delegate Pattern with Protocol'/>
+        <page name='Simple Delegate'/>
+        <page name='Delegate Pattern'/>
+        <page name='Github API'/>
+    </pages>
+</playground>
