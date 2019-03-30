@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  BloodDonationParser
 //
-//  Created by Asei on 2018/05/19.
+//  Created by Ryuichirouon 2018/05/19.
 //  Copyright © 2018年 gokennya. All rights reserved.
 //
 

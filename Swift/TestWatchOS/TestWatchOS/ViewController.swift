@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  TestWatchOS
 //
-//  Created by Asei on 2018/02/17.
+//  Created by Ryuichirouon 2018/02/17.
 //  Copyright © 2018年 gokennya. All rights reserved.
 //
 

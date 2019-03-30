@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  TestKeyboardProject
 //
-//  Created by Asei on 2018/06/16.
+//  Created by Ryuichirouon 2018/06/16.
 //  Copyright © 2018年 gokennya. All rights reserved.
 //
 
