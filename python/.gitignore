@@ -106,4 +106,12 @@ venv.bak/
 # mypy
 .mypy_cache/
 
+### https://raw.github.com/github/gitignore/9e018473e80cf262d25841facbbd69e7f1a4ef41/Global/VisualStudioCode.gitignore
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
 

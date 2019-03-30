@@ -1,0 +1,1 @@
+[A: Regular Triangle - エクサウィザーズ 2019 | AtCoder](https://exawizards2019.contest.atcoder.jp/tasks/exawizards2019_a)
