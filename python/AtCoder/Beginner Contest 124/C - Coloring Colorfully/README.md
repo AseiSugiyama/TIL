@@ -1,0 +1,1 @@
+[C - Coloring Colorfully](https://atcoder.jp/contests/abc124/tasks/abc124_c)
