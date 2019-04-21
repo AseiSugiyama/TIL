@@ -1,0 +1,4 @@
+module hcapiplugin {
+    umbrella "/Users/asei/Documents/TIL/Swift/ToDoBackend/ToDoServer/.build/checkouts/omr-agentcore/src/hcapiplugin/include"
+    export *
+}

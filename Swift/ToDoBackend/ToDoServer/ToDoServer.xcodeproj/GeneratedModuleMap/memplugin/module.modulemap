@@ -1,0 +1,4 @@
+module memplugin {
+    umbrella "/Users/asei/Documents/TIL/Swift/ToDoBackend/ToDoServer/.build/checkouts/omr-agentcore/src/memplugin/include"
+    export *
+}

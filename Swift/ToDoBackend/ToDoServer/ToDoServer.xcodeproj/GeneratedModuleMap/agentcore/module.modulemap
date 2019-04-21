@@ -1,0 +1,4 @@
+module agentcore {
+    umbrella "/Users/asei/Documents/TIL/Swift/ToDoBackend/ToDoServer/.build/checkouts/omr-agentcore/src/agentcore/include"
+    export *
+}
