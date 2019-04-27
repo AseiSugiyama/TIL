@@ -1,0 +1,1 @@
+[C - GCD on Blackboard](https://atcoder.jp/contests/abc125/tasks/abc125_c)

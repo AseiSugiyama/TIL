@@ -1,0 +1,1 @@
+[A - Biscuit Generator](https://atcoder.jp/contests/abc125/tasks/abc125_a)
