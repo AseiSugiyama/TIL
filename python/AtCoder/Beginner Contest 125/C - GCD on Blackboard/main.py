@@ -9,15 +9,15 @@ def gcd_strategy():
 
 
 def calculate_maximum_subgcd_with_np_ufunc(numbers, gcd):
-    u_gcd = np.frompyfunc(gcd, 2, 1)
-    cumgcds = u_gcd.accumulate(numbers, dtype=np.object).astype(np.int)
+    gcd_ufunc = np.frompyfunc(gcd, 2, 1)
+    cumgcds = gcd_ufunc.accumulate(numbers, dtype=np.object).astype(np.int)
     sub_cumgcds = np.roll(cumgcds, 1)
     sub_cumgcds[0] = 0
-    reverse_cumgcds = u_gcd.accumulate(
+    reverse_cumgcds = gcd_ufunc.accumulate(
         numbers[::-1], dtype=np.object).astype(np.int)
     sub_reverse_cumgcds = np.roll(reverse_cumgcds, 1)
     sub_reverse_cumgcds[0] = 0
-    return np.max(u_gcd(sub_cumgcds, sub_reverse_cumgcds[::-1]))
+    return np.max(gcd_ufunc(sub_cumgcds, sub_reverse_cumgcds[::-1]))
 
 
 def calculate_maximum_subgcd_with_func(numbers, gcd):
