@@ -164,6 +164,33 @@
         }
       },
       {
+        "package": "SwiftKuery",
+        "repositoryURL": "https://github.com/IBM-Swift/Swift-Kuery.git",
+        "state": {
+          "branch": null,
+          "revision": "d8e7cba51c6ca75de23b0229f584b536492ce23e",
+          "version": "3.0.1"
+        }
+      },
+      {
+        "package": "SwiftKueryORM",
+        "repositoryURL": "https://github.com/IBM-Swift/Swift-Kuery-ORM",
+        "state": {
+          "branch": null,
+          "revision": "0eaac6fcd62e460090b674b29077775cafeafd39",
+          "version": "0.5.2"
+        }
+      },
+      {
+        "package": "SwiftKueryPostgreSQL",
+        "repositoryURL": "https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL",
+        "state": {
+          "branch": null,
+          "revision": "b0d44d2521f82cda1da800560a03a9c807f0e784",
+          "version": "2.1.1"
+        }
+      },
+      {
         "package": "SwiftMetrics",
         "repositoryURL": "https://github.com/RuntimeTools/SwiftMetrics.git",
         "state": {
