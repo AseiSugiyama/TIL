@@ -7,3 +7,5 @@ applications:
   command: "'ToDoServer'"
   memory: 128M
   random-route: true
+
+secretsConfig: postgresql-database

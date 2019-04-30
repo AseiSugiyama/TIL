@@ -3,9 +3,9 @@
 replicaCount: 1
 revisionHistoryLimit: 1
 image:
-  repository: icr.io/replace-me-namespace/todoserver
-  tag: v1.0.0
-  pullPolicy: Always
+  repository: server-run
+  tag: 1.0.0
+  pullPolicy: IfNotPresent
   resources:
     requests:
       cpu: 200m
@@ -37,3 +37,4 @@ istio:
   weight: 100
 generatedBindings:
   enabled: true
+

@@ -116,7 +116,14 @@ public class App {
 
 class Persistence {
     static func setUp() {
-        let pool = PostgreSQLConnection.createPool(host: "localhost", port: 5432, options: [.userName("tododb"), .databaseName("tododb")], poolOptions: ConnectionPoolOptions(initialCapacity: 10, maxCapacity: 50))
+        let pool = PostgreSQLConnection.createPool(
+            host: "postgresql-database",
+            port: 5432,
+            options: [.databaseName("tododb"),
+                      .password(ProcessInfo.processInfo.environment["DBPASSWORD"] ?? "nil"),
+                      .userName("postgres"),
+            ],
+            poolOptions: ConnectionPoolOptions(initialCapacity: 10, maxCapacity: 50))
         Database.default = Database(pool)
     }
 }
