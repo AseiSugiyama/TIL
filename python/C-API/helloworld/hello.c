@@ -33,6 +33,18 @@ static PyObject* print_int_value(PyObject *self, PyObject *args){
     printf("value is %ld!\n", number);
     Py_RETURN_NONE;
 }
+
+static PyObject* hundle_bytes_as_string(PyObject *self, PyObject *args){
+    PyObject *buff;
+    if (!PyArg_ParseTuple(args, "S", &buff))
+    {
+        return NULL;
+    }
+
+    printf("value is %s!\n", PyBytes_AsString(buff));
+    Py_RETURN_NONE;
+}
+
 // Method definition object for this extension, these argumens mean:
 // ml_name: The name of the method
 // ml_meth: Function pointer to the method implementation
@@ -40,23 +52,14 @@ static PyObject* print_int_value(PyObject *self, PyObject *args){
 //          accepting arguments, accepting keyword arguments, being a
 //          class method, or being a static method of a class.
 // ml_doc:  Contents of this method's docstring
-static PyMethodDef hello_methods[] = { 
-    {   
-        "hello_world", hello_world, METH_NOARGS,
-        "Print 'hello world' from a method defined in a C extension."
-    },  
-    {   
-        "hello", hello, METH_VARARGS,
-        "Print 'hello xxx' from a method defined in a C extension."
-    },  
-    {NULL, NULL, 0, NULL}
-};
 static PyMethodDef hello_methods[] = {
     {"hello_world", hello_world, METH_NOARGS,
      "Print 'hello world' from a method defined in a C extension."},
     {"hello", hello, METH_VARARGS,
      "Print 'hello xxx' from a method defined in a C extension."},
     {"print_int_value", print_int_value, METH_VARARGS,
+     "Print 'value is xxx' from a method defined in a C extension."},
+    {"hundle_bytes_as_string", hundle_bytes_as_string, METH_VARARGS,
      "Print 'value is xxx' from a method defined in a C extension."},
     {NULL, NULL, 0, NULL}};
 
