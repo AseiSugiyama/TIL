@@ -1,6 +1,12 @@
 #include <stdio.h>
 #include <Python.h>
 
+// Since long type is gone in Python 3, 
+// PyInt_FromLong is not exist in Python 3 C-API
+#if PY_MAJOR_VERSION >= 3
+#define PyInt_FromLong PyLong_FromLong
+#endif
+
 // Module method definitions
 static PyObject* hello_world(PyObject *self, PyObject *args) {
     printf("Hello, world!\n");
@@ -17,6 +23,16 @@ static PyObject* hello(PyObject *self, PyObject *args) {
     Py_RETURN_NONE;
 }
 
+static PyObject* print_int_value(PyObject *self, PyObject *args){
+    long number;
+    if (!PyArg_ParseTuple(args, "l", &number))
+    {
+        return NULL;
+    }
+
+    printf("value is %ld!\n", number);
+    Py_RETURN_NONE;
+}
 // Method definition object for this extension, these argumens mean:
 // ml_name: The name of the method
 // ml_meth: Function pointer to the method implementation
@@ -35,6 +51,14 @@ static PyMethodDef hello_methods[] = {
     },  
     {NULL, NULL, 0, NULL}
 };
+static PyMethodDef hello_methods[] = {
+    {"hello_world", hello_world, METH_NOARGS,
+     "Print 'hello world' from a method defined in a C extension."},
+    {"hello", hello, METH_VARARGS,
+     "Print 'hello xxx' from a method defined in a C extension."},
+    {"print_int_value", print_int_value, METH_VARARGS,
+     "Print 'value is xxx' from a method defined in a C extension."},
+    {NULL, NULL, 0, NULL}};
 
 #if PY_MAJOR_VERSION >= 3
 // #define PyInteger_FromLong(x) PyLong_FromLong(x)
