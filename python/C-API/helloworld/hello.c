@@ -36,6 +36,11 @@ static PyMethodDef hello_methods[] = {
     {NULL, NULL, 0, NULL}
 };
 
+#if PY_MAJOR_VERSION >= 3
+// #define PyInteger_FromLong(x) PyLong_FromLong(x)
+// #else
+// #define PyInteger_FromLong(x) PyInt_FromLong(x)
+
 // Module definition
 // The arguments of this structure tell Python what to call your extension,
 // what it's methods are and where to look for it's method definitions
@@ -55,3 +60,10 @@ PyMODINIT_FUNC PyInit_hello(void) {
     Py_Initialize();
     return PyModule_Create(&hello_definition);
 }
+#else
+PyMODINIT_FUNC inithello(void)
+{
+    Py_InitModule3("hello",
+                   hello_methods, "A Python module that prints 'hello world' from C code.");
+}
+#endif
