@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <Python.h>
+#include <pthread.h>
 
 // Since long type is gone in Python 3, 
 // PyInt_FromLong is not exist in Python 3 C-API
@@ -45,6 +46,42 @@ static PyObject* hundle_bytes_as_string(PyObject *self, PyObject *args){
     Py_RETURN_NONE;
 }
 
+char program[] =
+    "import time\n"
+    "print('SLAVE RUNING')\n"    
+    "time.sleep(0.1)\n";
+
+void* rpf(void *arg){
+    PyGILState_STATE gstate = PyGILState_Ensure();
+    PyRun_SimpleString(program);
+    PyGILState_Release(gstate);
+    pthread_exit(NULL);
+    return NULL;
+}
+
+static PyObject* hundle_multi_thread_with_GIL(PyObject *self, PyObject *args){
+    PyEval_InitThreads();
+    PyThreadState *save = PyEval_SaveThread();
+
+    pthread_t tid1, tid2;
+    char *tname1 = "worker1";
+    char *tname2 = "worker2";
+
+    pthread_create(&tid1, NULL, &rpf, &tname1);
+    pthread_create(&tid2, NULL, &rpf, &tname2);
+
+    printf("MAIN THREAD\n");
+
+    pthread_join(tid1, NULL);
+    pthread_join(tid2, NULL);
+
+    // IMPORTNT: You must release before launching threads
+    PyEval_RestoreThread(save);
+    Py_Finalize();
+    pthread_exit(NULL);
+    Py_RETURN_NONE;
+}
+
 // Method definition object for this extension, these argumens mean:
 // ml_name: The name of the method
 // ml_meth: Function pointer to the method implementation
@@ -60,6 +97,8 @@ static PyMethodDef hello_methods[] = {
     {"print_int_value", print_int_value, METH_VARARGS,
      "Print 'value is xxx' from a method defined in a C extension."},
     {"hundle_bytes_as_string", hundle_bytes_as_string, METH_VARARGS,
+     "Print 'value is xxx' from a method defined in a C extension."},
+    {"hundle_multi_thread_with_GIL", hundle_multi_thread_with_GIL, METH_VARARGS,
      "Print 'value is xxx' from a method defined in a C extension."},
     {NULL, NULL, 0, NULL}};
 
@@ -85,7 +124,8 @@ static struct PyModuleDef hello_definition = {
 // the name keyword argument in setup.py's setup() call.
 PyMODINIT_FUNC PyInit_hello(void) {
     Py_Initialize();
-    return PyModule_Create(&hello_definition);
+    PyMODINIT_FUNC m = PyModule_Create(&hello_definition);
+    return m;
 }
 #else
 PyMODINIT_FUNC inithello(void)
