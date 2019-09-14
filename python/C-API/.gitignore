@@ -100,11 +100,14 @@ celerybeat-schedule
 # Environments
 .env
 .venv
+.legacy
 env/
 venv/
+legacy/
 ENV/
 env.bak/
 venv.bak/
+legacy.bak/
 
 # Spyder project settings
 .spyderproject
@@ -215,5 +218,14 @@ dkms.conf
 *.exe
 *.out
 *.app
+
+
+### https://raw.github.com/github/gitignore/6ffcee971119154f1188666c92d94248fa053b8e/Global/VisualStudioCode.gitignore
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
 
