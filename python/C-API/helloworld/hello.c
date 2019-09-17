@@ -5,6 +5,7 @@
 // Since long type is gone in Python 3, 
 // PyInt_FromLong is not exist in Python 3 C-API
 #if PY_MAJOR_VERSION >= 3
+
 #define PyInt_FromLong PyLong_FromLong
 #endif
 
@@ -48,7 +49,7 @@ static PyObject* hundle_bytes_as_string(PyObject *self, PyObject *args){
 
 char program[] =
     "import time\n"
-    "print('SLAVE RUNING')\n"    
+    "print('SLAVE RUNING\n')\n"    
     "time.sleep(0.1)\n";
 
 void* rpf(void *arg){
@@ -103,10 +104,6 @@ static PyMethodDef hello_methods[] = {
     {NULL, NULL, 0, NULL}};
 
 #if PY_MAJOR_VERSION >= 3
-// #define PyInteger_FromLong(x) PyLong_FromLong(x)
-// #else
-// #define PyInteger_FromLong(x) PyInt_FromLong(x)
-
 // Module definition
 // The arguments of this structure tell Python what to call your extension,
 // what it's methods are and where to look for it's method definitions
